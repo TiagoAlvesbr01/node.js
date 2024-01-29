@@ -5,8 +5,8 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '12345',
-    database: 'tiago',
+    password: '97508384',
+    database: 'celke',
   });
 
 
@@ -14,10 +14,10 @@ const connection = mysql.createConnection({
     console.log('Conexão com banco de dados realizada com sucesso!')
   })
 
-  connection.query("SELECT id, nome, email FROM usuarios", function (err, rows, fields) {
+  connection.query("SELECT nome, nascimento,sexo,peso,altura,nacionalidade FROM bota", function (err, rows, fields) {
     if (!err) {
         console.log("Resultado:", rows)
     } else {
-        console.log('Erro: Consulta não realizada com sucnesso!')
+        console.log('Erro: Consulta não realizada com sucesso!')
     }
   })
