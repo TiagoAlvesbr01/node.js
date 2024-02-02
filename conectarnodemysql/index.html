@@ -11,30 +11,17 @@
              <h1>Consulta ao MySQL</h1>
         </div>
         <form class="consulta-form">
-            <p>
-              Usuario:<input type="text" name="txt" id="txt" placeholder="Digite seu nome" required><br/>
-             </p>
-
-             <p>
+        
+              Usuario:<input type="text" name="usuario" id="usuario" placeholder="Digite seu nome" required><br/>
+             
               Senha:<input type="password" name="senha" id="senha" placeholder="Digite sua senha" required><br/>
-               </p>
-          
-
+               
              <a href="#" target="_blank" class="esqueceu">Esqueceu sua senha ?</a>
         </form>
-            
-        <button type="submit" onclick="consultar()" class="btn-consultar">Consultar</button><br/>
-
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Entrar
-        
-        <div class="registro">
-            <p>Ainda não é membro?</p>
-            <a href="#" target="_blank">Torna-se membro</a>
-        </div>
+            <div>
+               <button type="submit" onclick="Entrar(); return false" class="btn-consultar">Entrar</button><br/>
+            </div>
     </div>
+    <script src="login.js"></script>
 </body>
 </html>

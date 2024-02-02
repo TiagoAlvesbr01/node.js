@@ -1,30 +1,46 @@
 
+let usuarios = [
+    {
+    login:'victor',
+    pass: 'victor'
+    },
 
-    function logar() {
-        let nomes = document.getElementById('nomes').value
-        let senha = document.getElementById('senha').value
+    {
+        login:'luan',
+        pass: 'luan'
+     },
 
-        console.log(JSON.stringify({
-            nomes:nomes,
-            senha:senha
-        }))
+    {
+        login:'maria',
+        pass: 'maria'
+    },
+]
 
-        fetch("login", {
-            method:'POST',
-            body: JSON.stringify({
-                nomes:nomes,
-                senha:senha
-            }),
-            headers: {"content-type" : "application/json"}
-        })
+function Entrar() {
+    let pegaUsuario = document.getElementById('usuario').value;
+    let pegaSenha = document.getElementById('senha').value;
+    let validaLogin = false
 
-        .then(async (resp) => {
-            let status = await resp.text();
-            console.log(status)
-            if(status == 'conectado') {
-                location.href = '/acesso-restito/acesso.html'
-            } else {
-                alert('nome ou senha invalidos!')
-            }
-        })
+    // validar diferentes usuarios
+    for (let i in usuarios) {
+
+        if(pegaUsuario == usuarios[i].login && pegaSenha == usuarios[i].pass) {
+           validaLogin = true
+            break // server para parar no usuario encontrado
+        }
     }
+
+    if(validaLogin == true) {
+        location.href = "public/acesso-restrito/acesso.html"
+    }else {
+        alert('Usuario ou senha incorretos!')
+    }
+
+    // valida apenas um usuario
+    /*if(usuario == "admin" && senha == "admin") {
+        alert('Sucesso');
+        location.href = "public/acesso-restrito/acesso.html"
+    }else{
+        alert('Usuario ou senha incorretos')
+    }*/
+}
