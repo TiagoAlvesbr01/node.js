@@ -16,6 +16,8 @@ let usuarios = [
     },
 ]
 
+
+ 
 function Entrar() {
     let pegaUsuario = document.getElementById('usuario').value;
     let pegaSenha = document.getElementById('senha').value;
@@ -26,9 +28,12 @@ function Entrar() {
 
         if(pegaUsuario == usuarios[i].login && pegaSenha == usuarios[i].pass) {
            validaLogin = true
-            break // server para parar no usuario encontrado
+            break // serve para parar no usuario encontrado
+            //Evento.preventDefault(); serve para evitar que a página carregue
         }
     }
+
+          
 
     if(validaLogin == true) {
         location.href = "public/acesso-restrito/acesso.html"
